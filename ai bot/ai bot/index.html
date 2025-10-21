@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmGuard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">
+                <h1> FarmGuard</h1>
+                <p>Protecting crops with AI</p>
+            </div>
+            
+            <div class="quick-topics">
+                <h3>Quick Topics</h3>
+                <button class="topic-btn" onclick="askQuestion('How do I test soil pH?')">Soil Testing</button>
+                <button class="topic-btn" onclick="askQuestion('Best crops for monsoon season?')">Seasonal Crops</button>
+                <button class="topic-btn" onclick="askQuestion('How to identify plant diseases?')">Plant Diseases</button>
+                <button class="topic-btn" onclick="askQuestion('Organic fertilizer recommendations?')">Fertilizers</button>
+                <button class="topic-btn" onclick="askQuestion('Pest control methods?')">Pest Control</button>
+                <button class="topic-btn" onclick="askQuestion('Irrigation scheduling tips?')">Irrigation</button>
+            </div>
+            
+            <div class="features">
+                <h3>Features</h3>
+                <div class="feature-item">🤖 AI-Powered Advice</div>
+                <div class="feature-item">📸 Image Analysis</div>
+                <div class="feature-item">🌡️ Weather Integration</div>
+                <div class="feature-item">🌍 Regional Knowledge</div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="header">
+                <h2>FarmGuard - Your AI Farming Assistant</h2>
+                <div class="weather-widget" id="weather">
+                    <div>🌤️ Loading weather...</div>
+                </div>
+            </div>
+
+            <div class="chat-container">
+                <div class="chat-messages" id="chatMessages">
+                    <div class="welcome-message">
+                        <h2>Welcome to FarmGuard! 🌱</h2>
+                        <p>I'm here to help you with farming questions, crop advice, soil management, pest control, and more. Try asking me something or click on the examples below:</p>
+                        
+                        <div class="example-queries">
+                            <div class="example-query" onclick="askQuestion('What are the best crops to grow in clay soil?')">
+                                <strong>🌱 Soil & Crops</strong>
+                                <p>Best crops for clay soil?</p>
+                            </div>
+                            <div class="example-query" onclick="askQuestion('How do I identify and treat tomato blight?')">
+                                <strong>🍅 Disease Control</strong>
+                                <p>Identify tomato blight?</p>
+                            </div>
+                            <div class="example-query" onclick="askQuestion('When is the best time to plant wheat?')">
+                                <strong>⏰ Planting Schedule</strong>
+                                <p>When to plant wheat?</p>
+                            </div>
+                            <div class="example-query" onclick="askQuestion('How to make organic compost at home?')">
+                                <strong>♻️ Organic Farming</strong>
+                                <p>Make organic compost?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="typing-indicator" id="typingIndicator">
+                    <div class="typing-dots">
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                    </div>
+                    <span style="margin-left: 10px; color: #666;">FarmGuard is thinking...</span>
+                </div>
+
+                <div class="input-section">
+                    <input type="file" id="imageInput" class="file-input" accept="image/*" onchange="handleImageUpload(event)">
+                    <div class="input-group">
+                        <textarea 
+                            id="userInput" 
+                            class="input-field" 
+                            placeholder="Ask me about crops, soil, pests, weather, or farming techniques..."
+                            rows="1"
+                            onkeypress="handleKeyPress(event)"
+                        ></textarea>
+                    </div>
+                    <button class="send-btn" onclick="sendMessage()" id="sendBtn">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="script.js"></script>   
+</body>
+</html>
