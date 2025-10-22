@@ -15,7 +15,6 @@
 ---
 
 ## Tech Stack
-- Python / Node.js backend
-- NLP (OpenAI GPT, Hugging Face, or custom model)
-- Frontend: React / HTML + CSS + JS
-- Optional: Database (Firebase, MongoDB) for storing FAQs and user queries
+- Python backend
+- Frontend: HTML + CSS + JS
+- API keys: Open ai  
